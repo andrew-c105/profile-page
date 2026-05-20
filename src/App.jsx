@@ -7,7 +7,7 @@ import ColourGuesser from "./pages/ColourGuesser";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/profile-page/">
       <Layout>
         <Routes>
           <Route path="/" element={<LandingPage />} />
