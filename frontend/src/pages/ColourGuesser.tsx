@@ -262,9 +262,9 @@ const ColourGuesser = () => {
               <p className="text-gray-500 text-center text-lg leading-relaxed max-w-lg">
                 You'll be shown a random colour for{" "}
                 <span className="text-gray-900 font-semibold">6 seconds</span> over 3 rounds.
-                Memorise it, then recreate it using Hue, Saturation and
-                Brightness sliders. The closer your guess, the higher your
-                score!
+                Memorise it, then recreate it using hue, saturation and
+                brightness sliders. The closer your guess, the higher your
+                score! Try to score as high as you can!
               </p>
 
               <button
