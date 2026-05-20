@@ -23,7 +23,7 @@ const TILE_COLORS: Record<number, string> = {
   2048: "#edc22e",
 };
 
-// Slide a single row LEFT: [0, 2, 0, 2] → [4, 0, 0, 0]
+// Slide a single row LEFT
 const slideRow = (row: number[]): { slid: number[]; gained: number } => {
   let filtered = row.filter((val) => val !== 0);
   let gained = 0;
@@ -163,9 +163,9 @@ const Game2048 = () => {
   };
 
   return (
-    <div className="flex flex-col items-center py-8 px-5 font-sans">
+    <div className="flex flex-col items-center py-10 px-5 font-sans">
       {/* Back link */}
-      <div className="w-full max-w-[456px] mb-4">
+      <div className="w-full max-w-[540px] mb-6">
         <Link
           to="/games"
           className="text-lg text-gray-500 hover:text-gray-900 transition-colors border p-[10px] rounded-xl"
@@ -175,22 +175,22 @@ const Game2048 = () => {
       </div>
 
       {/* Title */}
-      <h1 className="text-5xl font-bold mb-4" style={{ color: "#776e65" }}>
+      <h1 className="text-7xl font-bold mb-6" style={{ color: "#776e65" }}>
         2048
       </h1>
 
       {/* Score + New Game */}
-      <div className="flex items-center gap-4 mb-2">
+      <div className="flex items-center gap-4 mb-4">
         <div
-          className="flex flex-col items-center rounded-md px-5 py-2"
+          className="flex flex-col items-center rounded-lg px-6 py-3"
           style={{ background: "#bbada0", color: "#fff" }}
         >
-          <span className="text-[0.7rem] font-bold tracking-widest">SCORE</span>
-          <span className="text-2xl font-bold">{score}</span>
+          <span className="text-[0.85rem] font-bold tracking-widest">SCORE</span>
+          <span className="text-3xl font-bold">{score}</span>
         </div>
         <button
           onClick={resetGame}
-          className="px-5 py-2 rounded-md text-white font-bold text-base cursor-pointer transition-colors"
+          className="px-6 py-3 rounded-lg text-white font-bold text-lg cursor-pointer transition-colors"
           style={{ background: "#8f7a66" }}
           onMouseOver={(e) => (e.currentTarget.style.background = "#7a6859")}
           onMouseOut={(e) => (e.currentTarget.style.background = "#8f7a66")}
@@ -200,13 +200,13 @@ const Game2048 = () => {
       </div>
 
       {/* Hint */}
-      <p className="text-sm mt-1 mb-4" style={{ color: "#aaa" }}>
+      <p className="text-base mt-2 mb-6" style={{ color: "#aaa" }}>
         Use arrow keys to move tiles
       </p>
 
       {/* Game Over message */}
       {gameOver && (
-        <p className="text-xl font-bold mb-3" style={{ color: "#f65e3b" }}>
+        <p className="text-3xl font-bold mb-4" style={{ color: "#f65e3b" }}>
           Game Over!
         </p>
       )}
@@ -215,28 +215,28 @@ const Game2048 = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 100px)",
-          gap: "8px",
+          gridTemplateColumns: "repeat(4, 120px)",
+          gap: "12px",
           background: "#bbada0",
-          padding: "8px",
-          borderRadius: "8px",
+          padding: "12px",
+          borderRadius: "12px",
         }}
       >
         {grid.map((cell, index) => (
           <div
             key={index}
             style={{
-              width: "100px",
-              height: "100px",
+              width: "120px",
+              height: "120px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              borderRadius: "4px",
+              borderRadius: "6px",
               backgroundColor: TILE_COLORS[cell] ?? "#3c3a32",
               color: cell <= 4 ? "#776e65" : "#f9f6f2",
             }}
           >
-            <span style={{ fontSize: "1.8rem", fontWeight: "bold" }}>
+            <span style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
               {cell !== 0 ? cell : ""}
             </span>
           </div>

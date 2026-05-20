@@ -232,7 +232,7 @@ const ColourGuesser = () => {
 
       {/* Back link — hidden during result/finalResult since there are buttons */}
       {phase !== "result" && phase !== "finalResult" && (
-        <div className="w-full max-w-[640px] mb-6">
+        <div className="w-full max-w-[768px] mb-6">
           <Link
             to="/games"
             className="text-lg text-gray-500 hover:text-gray-900 transition-colors"
@@ -252,14 +252,14 @@ const ColourGuesser = () => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="w-full max-w-[640px] flex flex-col items-center"
+            className="w-full max-w-[768px] flex flex-col items-center"
           >
             <div className="w-full rounded-2xl bg-white border border-gray-200 p-12 flex flex-col items-center gap-6 shadow-lg">
 
-              <h1 className="text-4xl font-bold text-gray-900 tracking-tight text-center">
+              <h1 className="text-5xl font-bold text-gray-900 tracking-tight text-center">
                 Guess The Colour
               </h1>
-              <p className="text-gray-500 text-center text-base leading-relaxed max-w-md">
+              <p className="text-gray-500 text-center text-lg leading-relaxed max-w-lg">
                 You'll be shown a random colour for{" "}
                 <span className="text-gray-900 font-semibold">6 seconds</span> over 3 rounds.
                 Memorise it, then recreate it using Hue, Saturation and
@@ -286,14 +286,14 @@ const ColourGuesser = () => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="w-full max-w-[640px] flex flex-col items-center gap-4"
+            className="w-full max-w-[768px] flex flex-col items-center gap-4"
           >
             <div
               className="w-full rounded-2xl overflow-hidden shadow-xl flex flex-col items-center justify-center relative"
               style={{
                 background: hsbToCss(target),
                 aspectRatio: "4 / 3",
-                minHeight: 420,
+                minHeight: 480,
               }}
             >
               {/* Subtle overlay for readability */}
@@ -328,7 +328,7 @@ const ColourGuesser = () => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="w-full max-w-[640px] flex flex-col items-center gap-5"
+            className="w-full max-w-[768px] flex flex-col items-center gap-5"
           >
             {/* Round indicator */}
             <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">
@@ -341,7 +341,7 @@ const ColourGuesser = () => {
               style={{
                 background: hsbToCss(guess),
                 aspectRatio: "16 / 9",
-                minHeight: 260,
+                minHeight: 320,
                 transition: "background 0.15s ease",
               }}
             />
@@ -409,14 +409,14 @@ const ColourGuesser = () => {
             {/* Submit */}
             <button
               onClick={handleSubmit}
-              className="w-[200px] py-3.5 rounded-xl bg-gray-900 text-white font-semibold text-base cursor-pointer"
+              className="w-[280px] py-3.5 rounded-xl bg-gray-900 text-white font-semibold text-base cursor-pointer"
             >
               Submit Guess
             </button>
 
             <button
               onClick={() => { setPhase("intro"); setRound(1); setRoundScores([]); }}
-              className="text-lg text-gray-700 hover:text-gray-600 transition-colors cursor-pointer w-[200px] py-3.5 rounded-xl border"
+              className="text-lg text-gray-700 hover:text-gray-600 transition-colors cursor-pointer w-[280px] py-3.5 rounded-xl border"
             >
               Back to Start
             </button>
@@ -432,7 +432,7 @@ const ColourGuesser = () => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="w-full max-w-[640px] flex flex-col items-center gap-5"
+            className="w-full max-w-[768px] flex flex-col items-center gap-5"
           >
             {/* Round indicator */}
             <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">
@@ -446,7 +446,7 @@ const ColourGuesser = () => {
                 className="relative flex flex-col justify-between p-8"
                 style={{
                   background: hsbToCss(guess),
-                  minHeight: 220,
+                  minHeight: 260,
                 }}
               >
                 <div />
@@ -475,7 +475,7 @@ const ColourGuesser = () => {
                 className="relative flex flex-col justify-end p-8"
                 style={{
                   background: hsbToCss(target),
-                  minHeight: 220,
+                  minHeight: 260,
                 }}
               >
                 <div>
@@ -492,7 +492,7 @@ const ColourGuesser = () => {
             {/* Next round or see final score */}
             <button
               onClick={handleNextRound}
-              className="w-[240px] py-3.5 rounded-xl bg-gray-900 text-white font-semibold text-base cursor-pointer"
+              className="w-[280px] py-3.5 rounded-xl bg-gray-900 text-white font-semibold text-base cursor-pointer"
             >
               {round < TOTAL_ROUNDS ? `Next Round (${round + 1}/${TOTAL_ROUNDS})` : "See Final Score"}
             </button>
@@ -515,17 +515,17 @@ const ColourGuesser = () => {
             animate="animate"
             exit="exit"
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="w-full max-w-[640px] flex flex-col items-center gap-5"
+            className="w-full max-w-[768px] flex flex-col items-center gap-5"
           >
             <div className="w-full rounded-2xl bg-white border border-gray-200 p-10 flex flex-col items-center gap-6 shadow-lg">
               <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">
                 Final Score
               </p>
 
-              <p className="text-gray-900 font-extrabold text-7xl leading-none">
+              <p className="text-gray-900 font-extrabold text-8xl leading-none">
                 {roundScores.reduce((a, b) => a + b, 0).toFixed(2)}
               </p>
-              <p className="text-gray-500 text-lg font-medium">
+              <p className="text-gray-500 text-xl font-medium">
                 out of {TOTAL_ROUNDS * 10}.00
               </p>
 
@@ -544,13 +544,13 @@ const ColourGuesser = () => {
             <div className="w-full flex gap-3">
               <button
                 onClick={startGame}
-                className="flex-1 py-3.5 w-[200px] rounded-xl bg-gray-900 text-white font-semibold text-sm cursor-pointer"
+                className="flex-1 py-3.5 w-[280px] rounded-xl bg-gray-900 text-white font-semibold text-sm cursor-pointer"
               >
                 Play Again
               </button>
               <button
                 onClick={() => navigate("/games")}
-                className="flex-1 py-3.5 w-[200px] rounded-xl bg-white text-gray-900 font-semibold text-sm border border-gray-200 cursor-pointer"
+                className="flex-1 py-3.5 w-[280px] rounded-xl bg-white text-gray-900 font-semibold text-sm border border-gray-200 cursor-pointer"
               >
                 Back to Games
               </button>
