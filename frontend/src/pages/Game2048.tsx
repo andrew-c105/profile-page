@@ -168,9 +168,9 @@ const Game2048 = () => {
       <div className="w-full max-w-[456px] mb-4">
         <Link
           to="/games"
-          className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+          className="text-lg text-gray-500 hover:text-gray-900 transition-colors border p-[10px] rounded-xl"
         >
-          ← Back to Games
+          Back to Games
         </Link>
       </div>
 

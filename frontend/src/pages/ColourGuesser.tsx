@@ -13,7 +13,7 @@ interface HSB {
 }
 
 // Colour helpers 
-// Convert HSB → CSS hsl() string. HSB brightness maps to HSL lightness. 
+// Convert HSB -> CSS hsl() string. HSB brightness maps to HSL lightness. 
 const hsbToHsl = ({ h, s, b }: HSB): { h: number; s: number; l: number } => {
   const sFrac = s / 100;
   const bFrac = b / 100;
