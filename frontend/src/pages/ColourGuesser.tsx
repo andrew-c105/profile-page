@@ -264,7 +264,7 @@ const ColourGuesser = () => {
                 <span className="text-gray-900 font-semibold">6 seconds</span> over 3 rounds.
                 Memorise it, then recreate it using hue, saturation and
                 brightness sliders. The closer your guess, the higher your
-                score! Try to score as high as you can!
+                score! Try to score as high as you possibly can!
               </p>
 
               <button
