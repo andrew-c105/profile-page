@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const COLS = 4;
 const ROWS = 4;
 
-// Index helpers
 const rc = (idx: number): [number, number] => [Math.floor(idx / COLS), idx % COLS];
 const ix = (row: number, col: number): number => row * COLS + col;
 
