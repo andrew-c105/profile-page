@@ -177,7 +177,7 @@ const LandingPage = () => {
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            Write some notes or play some games!
+            Play some games!
           </p>
         </motion.div>
 
@@ -194,7 +194,7 @@ const LandingPage = () => {
           }}
         >
           <motion.button
-            onClick={() => navigate("/notes")}
+            onClick={() => navigate("/games")}
             style={{
               padding: "0.75rem 2rem",
               borderRadius: "0.5rem",
@@ -204,23 +204,6 @@ const LandingPage = () => {
               fontSize: "1rem",
               background: "#3b82f6",
               color: "#ffffff",
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
-            Open Notes
-          </motion.button>
-
-          <motion.button
-            onClick={() => navigate("/games")}
-            style={{
-              padding: "0.75rem 2rem",
-              borderRadius: "0.5rem",
-              border: "1.5px solid #cbd5e1",
-              cursor: "pointer",
-              fontWeight: 600,
-              fontSize: "1rem",
-              background: "#ffffff",
-              color: "#334155",
               fontFamily: "'Inter', sans-serif",
             }}
           >

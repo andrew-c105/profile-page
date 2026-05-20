@@ -9,12 +9,6 @@ const Navbar = () => {
             Homepage
           </Link>
           <Link
-            to="/notes"
-            className="text-lg text-gray-600 hover:text-gray-900"
-          >
-            Notes
-          </Link>
-          <Link
             to="/games"
             className="text-lg text-gray-600 hover:text-gray-900"
           >
