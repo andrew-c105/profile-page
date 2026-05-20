@@ -17,7 +17,13 @@ const games: GameCard[] = [
   {
     title: "Guess the Colour",
     description:
-      "You're shown a colour for 5 seconds. Adjust 3 sliders to recreate it from memory!",
+      "You're shown a colour for 6 seconds. Adjust 3 sliders to recreate it from memory!",
+    route: "/games/colourguesser"
+  },
+  {
+    title: "Blackjack",
+    description:
+      "Classic game of blackjack",
     comingSoon: true,
   },
 ];

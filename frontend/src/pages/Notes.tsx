@@ -135,7 +135,7 @@ const Notes = () => {
   }, []);
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
+    <div className="flex h-[calc(90vh-4rem)] border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
       {/* Sidebar */}
       <aside className="w-64 shrink-0 border-r border-gray-200 flex flex-col">
         <div className="flex flex-row items-center justify-between px-4 py-3 gap-3 border-b border-gray-200">
@@ -162,8 +162,8 @@ const Notes = () => {
                   <button
                     onClick={() => setSelectedNote(note)}
                     className={`w-full text-left px-4 py-3 pr-8 border-b border-gray-100 hover:bg-gray-50 transition-colors ${selectedNote?._id === note._id
-                        ? "bg-blue-50 border-l-2 border-l-blue-500"
-                        : ""
+                      ? "bg-blue-50 border-l-2 border-l-blue-500"
+                      : ""
                       }`}
                   >
                     <p className="text-sm font-medium text-gray-800 truncate">

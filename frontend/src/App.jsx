@@ -4,6 +4,7 @@ import LandingPage from "./pages/LandingPage";
 import Notes from "./pages/Notes";
 import Games from "./pages/Games";
 import Game2048 from "./pages/Game2048";
+import ColourGuesser from "./pages/ColourGuesser";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/notes" element={<Notes />} />
           <Route path="/games" element={<Games />} />
           <Route path="/games/2048" element={<Game2048 />} />
+          <Route path="/games/colourguesser" element={<ColourGuesser />} />
         </Routes>
       </Layout>
     </BrowserRouter>
