@@ -9,8 +9,8 @@ const noteRoutes = require("./routes/noteRoutes");
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors()); // Allows frontend to talk to us
-app.use(express.json()); // Parse JSON request bodies
+app.use(cors());
+app.use(express.json());
 
 // Connect to MongoDB
 mongoose

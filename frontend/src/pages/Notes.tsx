@@ -44,14 +44,11 @@ const Notes = () => {
   }, [selectedNote?._id]);
 
   const handleFieldChange = (field: "title" | "content", value: string) => {
-    // Update UI instantly so typing feels responsive
     setEditTitle(field === "title" ? value : editTitle);
     setEditContent(field === "content" ? value : editContent);
 
-    // Cancel the previous timer if the user is still typing
     if (saveTimer.current) clearTimeout(saveTimer.current);
 
-    // Start a new timer — only fires if user stops for 500ms
     saveTimer.current = setTimeout(() => {
       handleSaveNote(field, value);
     }, 500);
@@ -95,7 +92,6 @@ const Notes = () => {
         body: JSON.stringify({ [field]: value }),
       });
       if (!response.ok) return;
-      // Update the notes list in place so the sidebar reflects the new title
       setNotes((prev) =>
         prev.map((n) => (n._id === selectedNote._id ? updated : n)),
       );
@@ -113,7 +109,6 @@ const Notes = () => {
       if (!response.ok) return;
       const remaining = notes.filter((n) => n._id !== noteId);
       setNotes(remaining);
-      // If the deleted note was selected, move to the next one
       if (selectedNote?._id === noteId) {
         setSelectedNote(remaining.length > 0 ? remaining[0] : null);
       }
@@ -128,7 +123,6 @@ const Notes = () => {
         const response = await fetch(NOTES_URL);
         const data: Note[] = await response.json();
         setNotes(data);
-        // Auto-select the first (most recent) note
         if (data.length > 0) setSelectedNote(data[0]);
       } catch (err) {
         console.error("Failed to fetch notes:", err);
@@ -165,14 +159,12 @@ const Notes = () => {
             <ul>
               {notes.map((note) => (
                 <li key={note._id} className="relative">
-                  {/* Select button — fills the whole row */}
                   <button
                     onClick={() => setSelectedNote(note)}
-                    className={`w-full text-left px-4 py-3 pr-8 border-b border-gray-100 hover:bg-gray-50 transition-colors ${
-                      selectedNote?._id === note._id
+                    className={`w-full text-left px-4 py-3 pr-8 border-b border-gray-100 hover:bg-gray-50 transition-colors ${selectedNote?._id === note._id
                         ? "bg-blue-50 border-l-2 border-l-blue-500"
                         : ""
-                    }`}
+                      }`}
                   >
                     <p className="text-sm font-medium text-gray-800 truncate">
                       {note.title || "Untitled"}
@@ -183,7 +175,6 @@ const Notes = () => {
                       </p>
                     )}
                   </button>
-                  {/* Trash icon — overlaid top-right, visible on hover */}
                   <button
                     onClick={() => handleDeleteNote(note._id)}
                     className="absolute right-2 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-red-50 hover:text-red-500 text-gray-400 transition-all"
